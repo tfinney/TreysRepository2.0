@@ -15,9 +15,12 @@ using namespace std;
 int main() {
     //Declare variables
     int var1;
-    cout << "Pizza 1" << endl
-         << "Coke 2" << endl
-         << "Pepsi 3";
+    cout << "Select your perfect party!" << endl;
+    cout << "#################" << endl 
+         << "# 1.  Pizza" << endl
+         << "# 2.  Coke" << endl
+         << "# 3.  Pepsi" << endl
+         << "#################" << endl;
     cin >> var1;
     if(var1 == 1)
         cout << "PIZZA PARTY!!!";
@@ -27,8 +30,10 @@ int main() {
         cout << "Pepsi is nasty!";
     else if(var1 <=0 or var1 >=3)
         cout << "Please try again";
-    else if(var1 != )
-        cout << "Please enter a 1, 2, or 3";
+    else 
+        cout << "Please enter an item off the menu.";
+    
+    cout << endl << "Have a great day!";
     
     return 0;
 }

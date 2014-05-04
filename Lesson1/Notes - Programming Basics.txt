@@ -1,0 +1,320 @@
+Problem Solving
+
+
+- the major steps involved in computer-based problem solving are:
+	1) understand the problem to be solved
+	2) decompose problem into pieces you know how to solve
+	3) write computer instructions for each piece
+	4) combine pieces into a single program
+	5) compile, test, and debug program
+	6) use program to solve initial problem
+
+Programming
+
+
+- objective of programming is to give computer detailed instructions
+- computers and programmers have to read these instructions
+- need to have unambiguous way to write instructions
+- need to learn syntax and semantics of programming language
+- rest of this class focuses on using C++ for problem solving
+
+Comments
+
+
+- comments are used to explain program purpose and methods used
+- comments are human readable, but ignored by compiler
+- should write comments when designing program
+- should also add comments explaining major changes
+- two types of comments supported:
+	1) old C style comments which can span multiple lines 
+	2) new C++ style comments which go to end of current line
+
+/* Here is an old style C comment. */
+// Here is a new C++ comment.
+
+Variables
+
+
+- we need to store and access data to perform interesting calculations
+- can allocate space in computer for data by declaring a variable
+- syntax is: data_type variable_name;  (data_types are listed below)
+- should choose meaningful names for variables (ie "Age" not "A")
+- variable names must start with upper or lower case characters and may 
+contain numbers and selected special characters (underscore)
+- C++ is case sensitive so "Num" is a different variable from "num"
+
+Data Types
+
+
+- different types of data can be saved, depending on application
+- int - stores positive or negative integers (32 bit)
+- float - stores positive or negative real numbers (32 bit)
+- char - stores ascii characters 'A' .. 'Z', etc. (8 bit)
+- the names int float char (and others) are reserved words
+
+// Variable declaration example
+int Age;		// Can store age in years
+float Height;	// Can store height in meters
+char Gender;	// Can store 'M' or 'F' for gender
+int x,y,z;		// Can have multiple variables on a line
+
+Constants
+
+
+- certain variables have values which will never change
+- can use constants to store these values
+- define constants by adding reserved word const before declaration
+- also need to provide value at declaration time
+- can have constants of any variable data type
+- constant declarations must end with a semi-colon
+
+// Constant example
+const int SILLY = 42;
+const float E = 2.718;           // the exponential function base
+const char YES = 'Y';
+
+Assignment Statements
+
+
+- can copy one variable to another using the assignment operator =
+- variable on left of = is destination, where data is copied to
+- value on right of = is source, where data comes from
+- data values should be of the same type
+- conversion will occur if values are not of same type
+- assignment statements must end with a semi-colon
+
+// Assignment example
+int Value;
+int Number;
+float Data;
+
+Data = 2.158;		// Data variable now equals 2.158
+Value = 17;			// Value variable now equals 17
+Number = Value;		// Number variable now equals 17
+Data = SILLY;		// Data variable now equals 42.0
+Number = E; 		// Number variable now equals 3
+x = y = z = 0;			// multiple assignments on one line
+
+Input and Output
+
+
+- need to have some way to get data in and out of program
+- the input / output commands respectively are:
+	cin >> variable ;
+	cout << data ;
+- input commands read values typed in by user into variables
+- output commands write data values to users display screen
+- spaces between values are skipped when reading input
+- no spaces are written between values on output (unless added)
+- special value endl can be written for carriage return
+- can use \n for return, \t for tab, and \a for bell
+- must use \" for double quote, \\ for slash character
+- I/O statements must end with a semi-colon
+
+// Input output example
+cin >> Data;				// reads one float
+cin >> Number >> Value;	// reads two integers 
+cout << 38.43;			// writes "38.43"
+cout << SILLY;			// writes "42"
+cout << "e is " << E;		// writes "e is 2.718"
+cout << Number;			// writes contents of Number
+cout << endl;			// goes to next line on screen cout 
+<< "\n";				// goes to next line on screen 
+
+
+Arithmetic Expressions
+
+
+- often need to combine variables to get new values
+- calculations can be expressed as arithmetic expressions
+- the arithmetic operators are: 
+	*	multiplication
+	/	division
+	%	modulo (remainder after division)
+	+	addition
+	-	subtraction
+
+// Arithmetic expressions
+Data = E * 5; 		// data now equals 15.707295
+Number = SILLY / 5;	// Number now equals 8
+cout << 1+2+3;		// writes "6"
+Value = Data - 5; 		// Value now equals 10
+Number = 27 % 10;	// Number now equals 7
+
+Operator Precedence Rules
+
+
+- values are computed using "natural" operator precedence rules 
+- parenthesized expressions ( ) evaluated first from inside out
+- multiplication, division, modulo have high precedence
+- addition, subtraction have lower precedence
+- high precedence operations computed before low precedence
+- values calculated left to right at same precedence level
+- number the order of operations by hand for debugging
+
+// Complex expressions
+Number = Silly * Value - Number;
+Data = (Number + Value) * Silly;
+Value = E / Data * E;
+cout << 1+2-3+4-5+6;
+Number = (1+2)-((3+4)-(5+6));
+
+Basic Program Structure
+
+
+- all C++ programs have the following structure:
+	1) introductory comments - explain program purpose and method
+	2) include statements - access to existing function libraries
+	3) global data structures - used to store information (later)
+	4) user defined functions - used to decompose problem (later)
+	5) main function - variables and statements for program
+- use blank lines to make the program look nice
+
+// Program structure example
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   cout << "Hello mom.\n";
+   return(0);
+}
+
+Software Engineering Tips
+
+
+- try to pick variable names which are meaningful
+- always initialize variables before you use their values
+- write your comments before you write your code
+- add to your program a little at a time (grow your solution)
+
+Initial Sphere Program
+
+
+//---------------------------------------------------
+// Purpose: Program to calculate the volume and area
+//          of a sphere of a given radius.
+// Author:  John Gauch
+// Date:  Fall 2009
+//---------------------------------------------------
+
+int main()
+{
+   // Local variable declarations
+   // Read input parameters
+   // Calculate volume
+   // Calculate surface area
+   // Print output
+   return (0);
+}
+
+Final Sphere Program
+
+
+//---------------------------------------------------
+// Purpose: Program to calculate the volume and area
+//          of a sphere of a given radius.
+// Author:  John Gauch
+// Date:    Fall 2009
+//---------------------------------------------------
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+// Local variable declarations
+float Radius;
+float Volume;
+float Area;
+
+   // Read input parameters
+   cout << "Enter sphere radius: ";
+   cin >> Radius;
+
+   // Calculate volume
+   Volume = (4.0 / 3.0) * M_PI * Radius * Radius * Radius;
+
+   // Calculate surface area
+   Area = 4.0 * M_PI * Radius * Radius;
+
+   // Print output
+   cout << "Radius = " << Radius << endl;
+   cout << "Volume = " << Volume << endl;
+   cout << "Area = " << Area << endl;
+   return(0);
+}
+
+Initial Statistics Program
+
+
+//---------------------------------------------------
+// Purpose: Program to calculate mean and variance 
+//          of five input values.
+// Author:  John Gauch
+// Date:	  Fall 2009
+//---------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   // Local variable declarations
+   // Read input parameters
+   // Calculate mean
+   // Calculate variance
+   // Print statistics
+   return (0);
+}
+
+Final Statistics Program
+
+
+//---------------------------------------------------
+// Purpose: Program to calculate mean and variance 
+//          of five input values.
+// Author:  John Gauch
+// Date:	  Fall 2009
+//---------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   // Local variable declarations
+   // Read input parameters
+   // Calculate mean
+   // Calculate variance
+   // Print statistics
+   return (0);
+}
+
+
+int main()
+{
+// Local variable declarations
+float Num1, Num2, Num3, Num4, Num5;
+float Dif1, Dif2, Dif3, Dif4, Dif5;
+float Mean, Var;
+
+   // Read input parameters
+   cout << "Enter five numbers: ";
+   cin >> Num1 >> Num2 >> Num3 >> Num4 >> Num5;
+
+   // Calculate mean
+   Mean = (Num1 + Num2 + Num3 + Num4 + Num5) / 5.0;
+
+   // Calculate variance
+   Dif1 = Num1 - Mean;
+   Dif2 = Num2 - Mean;
+   Dif3 = Num3 - Mean;
+   Dif4 = Num4 - Mean;
+   Dif5 = Num5 - Mean;
+   Var = (Dif1*Dif1 + Dif2*Dif2 + Dif3*Dif3 
+       +  Dif4*Dif4 + Dif5*Dif5) / 5.0;
+
+   // Print statistics
+   cout << "Mean = " << Mean << endl;
+   cout << "Variance = " << Var << endl;
+   return (0);
+}
